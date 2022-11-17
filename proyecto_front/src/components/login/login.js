@@ -7,6 +7,7 @@ import { isNull } from "util";
 import Cookies from "universal-cookie";
 import {calcularExpirarSesion} from "../helper/helper";
 import Loading from "../loading/loading";
+
 const {APIHOST} = app;
 const cookies = new Cookies();
 
@@ -36,6 +37,8 @@ export default class login extends React.Component {
           path: '/',
           expires:calcularExpirarSesion(),
         });
+        this.props.history.push(window.open('/empleados')
+        );
       }
       this.setState({ loading: false });
     })
